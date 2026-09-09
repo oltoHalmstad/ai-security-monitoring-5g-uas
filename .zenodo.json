@@ -1,0 +1,22 @@
+{
+  "title": "5G/UAS Wireless-Security Co-Simulation Dataset and Reproducibility Artifact for AI-Assisted Security Monitoring",
+  "upload_type": "dataset",
+  "description": "Companion dataset and reproducibility artifact for the manuscript “AI-Assisted Security Monitoring in 5G-Enabled UAS Wireless Networks: Run-Wise Validation and Cross-Domain Transfer” prepared for the Springer Wireless Networks collection “AI-powered Secure and Smart Wireless Networks”.",
+  "creators": [
+    {"name": "Torstensson, Olga", "affiliation": "Halmstad University", "orcid": "0009-0007-2169-6851"},
+    {"name": "Shrestha, Basudeo", "affiliation": "Halmstad University"},
+    {"name": "Prokopovych-Tkachenko, Dmytro", "affiliation": "University of Customs and Finance", "orcid": "0000-0002-6590-3898"},
+    {"name": "Galushchenko, Oleksandr", "affiliation": "Vinnytsia National Technical University", "orcid": "0009-0002-5597-8818"},
+    {"name": "Nunes, Raul Ceretta", "affiliation": "Federal University of Santa Maria", "orcid": "0000-0003-3228-4071"},
+    {"name": "de Freitas, Edison Pignaton", "affiliation": "Halmstad University; Federal University of Rio Grande do Sul", "orcid": "0000-0003-4655-8889"}
+  ],
+  "keywords": ["5G security", "UAS", "wireless intrusion detection", "machine learning", "co-simulation", "Simu5G", "PX4", "ROS 2", "network telemetry", "domain shift", "cross-domain transfer", "reproducible research"],
+  "license": "CC-BY-4.0",
+  "version": "2.0.0",
+  "publication_date": "2026-09-09",
+  "access_right": "open",
+  "related_identifiers": [
+    {"identifier": "10.5281/zenodo.20825334", "relation": "isDerivedFrom", "resource_type": "dataset"},
+    {"identifier": "https://github.com/oltoHalmstad/ai-security-monitoring-5g-uas", "relation": "isSupplementTo", "resource_type": "software"}
+  ]
+}
