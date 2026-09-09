@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "status": "reconstructed_from_primary_sources",
+    "reference_doi": "10.5281/zenodo.20825334",
+    "note": "The documents reference but do not contain or publish the original schema_reference.json."
+  },
+  "columns": [
+    "timestamp", "organization_id", "fleet_id", "drone_id", "mission_id", "domain", "mission_type", "source_component", "destination_component", "source_ip", "destination_ip", "source_port", "destination_port", "protocol", "network_slice_id", "cell_id", "session_id", "packet_count", "byte_count", "packets_per_second", "throughput_kbps", "latency_ms", "jitter_ms", "packet_loss_rate", "retransmission_rate", "connection_duration_sec", "authentication_status", "handover_event", "handover_count", "signal_quality_dbm", "command_channel_activity", "video_stream_activity", "telemetry_stream_activity", "api_request_count", "failed_connection_attempts", "unusual_destination_flag", "session_reuse_flag", "traffic_burst_flag", "anomaly_score", "attack_type", "attack_stage", "severity", "recommended_response", "incident_label"
+  ],
+  "incident_label": ["normal", "suspicious", "malicious"],
+  "attack_type": ["none", "unknown_anomaly", "denial_of_service", "session_hijacking", "identity_theft", "control_protocol_attack", "lateral_movement", "network_application_attack"],
+  "binary": ["handover_event", "video_stream_activity", "telemetry_stream_activity", "unusual_destination_flag", "session_reuse_flag", "traffic_burst_flag"],
+  "unit_interval": ["packet_loss_rate", "retransmission_rate", "anomaly_score"]
+}
