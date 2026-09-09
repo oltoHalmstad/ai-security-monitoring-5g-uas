@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Generated outputs
+analysis_outputs/
+regenerated_figures/
+
+# Editors / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Large raw simulator outputs (not tracked)
+*.vec
+*.vci
+*.mcap
+*.bag
