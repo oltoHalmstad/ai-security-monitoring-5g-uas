@@ -1,7 +1,7 @@
 numpy==1.26.4
 pandas==2.3.3
 scikit-learn==1.7.2
-scipy
-matplotlib
-PyYAML
-jupyter
+scipy==1.17.1
+matplotlib==3.11.1
+PyYAML==6.0.3
+jupyter==1.1.1

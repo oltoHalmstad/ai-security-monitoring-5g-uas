@@ -19,30 +19,45 @@ Key manuscript results include:
 
 The precursor synthetic dataset is publicly archived at DOI **10.5281/zenodo.20825334**.
 
-## Repository structure
+## What is stored on GitHub
 
 ```text
-analysis/       reproducible analysis and validation scripts
-docs/           dataset, experiment and provenance documentation
-manifests/      scenario YAML files
-results/        run-wise, transfer and distribution-shift results
-schema/         44-column telemetry schema
-src/            co-simulation orchestration, bridge and validation code
-.github/        CI validation workflow
+analysis/       reproducible analysis and repository-validation scripts
+docs/           dataset and reproducibility documentation
+results/        publication-facing validation and robustness tables
+schema/         44-column telemetry schema reference
+.github/        GitHub Actions validation workflow
 ```
 
-Large research data, exact manuscript figures, per-run CSV files, and representative provenance artifacts are intended for the companion **Zenodo v2.0.0** release. This keeps the GitHub repository reviewable while Zenodo provides immutable archival storage and a DOI.
+Large research data, the 43 per-run CSVs, scenario manifests, exact manuscript figures, representative provenance artifacts, and the full source co-simulation package are intended for the companion **Zenodo v2.0.0** release. They are intentionally not duplicated in this lightweight GitHub repository.
 
-## Quick start
+## Quick repository validation
+
+The commands below work with the files stored directly in this repository:
 
 ```bash
 python -m pip install -r requirements.txt
-python analysis/validate_package.py
-python analysis/reproduce_manuscript_analysis.py
-python analysis/make_key_figures.py
+python analysis/validate_repository.py
 ```
 
-The downstream analysis does not require Gazebo/PX4/ROS 2/OMNeT++/INET/Simu5G. Full source co-simulation recreation requires those external tools; versions and boundaries are documented under `docs/`.
+GitHub Actions runs the same validation automatically on pushes to `main` and on pull requests.
+
+## Reproduce the manuscript analyses
+
+The full numerical reproduction requires the companion Zenodo datasets. After downloading them, place the two aggregate CSV files at:
+
+```text
+data/synthetic_reference/drone_network_telemetry_dataset.csv
+data/cosimulation/drone_network_telemetry_cosim.csv
+```
+
+Then run:
+
+```bash
+python analysis/reproduce_manuscript_analysis.py
+```
+
+The script writes regenerated tables to `analysis_outputs/`. The downstream analysis does not require Gazebo/PX4/ROS 2/OMNeT++/INET/Simu5G. Full source co-simulation recreation requires those external tools and the companion source package.
 
 ## Reproducibility boundary
 
