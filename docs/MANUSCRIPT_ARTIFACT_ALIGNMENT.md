@@ -4,11 +4,13 @@ Manuscript: **AI-Assisted Security Monitoring in 5G-Enabled UAS Wireless Network
 
 Artifact: **5G/UAS Wireless-Security Co-Simulation Dataset and Reproducibility Artifact for AI-Assisted Security Monitoring**, version 2.0.0
 
+Companion Zenodo DOI: **10.5281/zenodo.22709680**
+
 Publication repository: https://github.com/oltoHalmstad/ai-security-monitoring-5g-uas
 
 ## Alignment checks
 
-- Creator order matches the manuscript and planned Zenodo metadata: Olga Torstensson; Basudeo Shrestha; Dmytro Prokopovych-Tkachenko; Oleksandr Galushchenko; Raul Ceretta Nunes; Edison Pignaton de Freitas.
+- Creator order matches the manuscript and Zenodo metadata: Olga Torstensson; Basudeo Shrestha; Dmytro Prokopovych-Tkachenko; Oleksandr Galushchenko; Raul Ceretta Nunes; Edison Pignaton de Freitas.
 - Both datasets use the same ordered 44-column telemetry schema.
 - Co-simulation dimensions match the manuscript: 17,779 rows, 43 runs, 15,247 normal, 912 suspicious, 1,620 malicious.
 - `results/fair_groupwise_comparison.csv` matches Table 6 / Fig. 8.
@@ -17,4 +19,4 @@ Publication repository: https://github.com/oltoHalmstad/ai-security-monitoring-5
 - `results/window_level_model_metrics.csv` supports the secondary 70/30 results used in Section 4.5 / Fig. 7.
 - Exact copies of all 10 manuscript figures are distributed in the companion Zenodo package under `figures/manuscript/`; they are not duplicated in this lightweight GitHub repository.
 - Primary Zenodo license is CC BY 4.0; original research code is additionally MIT-licensed.
-- No companion DOI is fabricated before reservation.
+- The manuscript, Zenodo package metadata, `CITATION.cff`, and repository documentation use the same reserved companion DOI: **10.5281/zenodo.22709680**.
