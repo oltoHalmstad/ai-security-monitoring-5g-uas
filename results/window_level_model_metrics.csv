@@ -1,0 +1,16 @@
+model,dataset,feature_set,accuracy,macro_f1
+random forest,Co-simulation,raw metrics only,0.9173,0.7287
+random forest,Co-simulation,raw + 5G context,0.9381,0.7977
+random forest,Co-simulation,raw + security indicators,0.9177,0.7282
+random forest,Co-simulation,full feature set,0.9372,0.7924
+random forest,Synthetic reference,full feature set,0.9990,0.9989
+gradient boosting,Co-simulation,raw metrics only,0.9226,0.7297
+gradient boosting,Co-simulation,raw + 5G context,0.9441,0.8198
+gradient boosting,Co-simulation,raw + security indicators,0.9216,0.7283
+gradient boosting,Co-simulation,full feature set,0.9447,0.8239
+gradient boosting,Synthetic reference,full feature set,0.9983,0.9979
+logistic regression,Co-simulation,raw metrics only,0.8656,0.3714
+logistic regression,Co-simulation,raw + 5G context,0.8948,0.5807
+logistic regression,Co-simulation,raw + security indicators,0.8941,0.5675
+logistic regression,Co-simulation,full feature set,0.8946,0.5814
+logistic regression,Synthetic reference,full feature set,0.9907,0.9875
