@@ -15,7 +15,9 @@ Publication-facing result anchors in this repository are:
 - `results/distribution_shift_results.csv`: all-row and normal-only KS diagnostics. Normal packet-count KS D is **0.993** and normal API-request-count D rounds to **1.000**.
 - `results/window_level_model_metrics.csv`: secondary 70/30 window-level comparison. HGB reaches **0.824** macro-F1 with the full co-simulation feature set and **0.820** with traffic+5G.
 
-The precursor synthetic dataset is public at DOI **10.5281/zenodo.20825334**.
+Companion Zenodo v2.0.0 DOI: **10.5281/zenodo.22709680**.
+
+The precursor synthetic dataset remains public at DOI **10.5281/zenodo.20825334**.
 
 ## Repository structure
 
@@ -27,7 +29,7 @@ schema/         44-column telemetry schema reference
 .github/        GitHub Actions validation workflow
 ```
 
-Large research data, 43 per-run CSVs, 43 YAML manifests, exact manuscript figures, source co-simulation code, and representative provenance are maintained in the companion **Zenodo v2.0.0** artifact rather than duplicated in this lightweight GitHub repository.
+Large research data, 43 per-run CSVs, 43 YAML manifests, exact manuscript figures, source co-simulation code, and representative provenance are maintained in the companion **Zenodo v2.0.0** artifact at https://doi.org/10.5281/zenodo.22709680 rather than duplicated in this lightweight GitHub repository.
 
 ## Quick repository validation
 
@@ -38,7 +40,7 @@ python analysis/validate_repository.py
 
 ## Reproduce manuscript analyses
 
-Download the companion Zenodo v2.0.0 artifact and place its aggregate datasets at:
+Download the companion Zenodo v2.0.0 artifact from https://doi.org/10.5281/zenodo.22709680 and place its aggregate datasets at:
 
 ```text
 data/synthetic_reference/drone_network_telemetry_dataset.csv
@@ -63,6 +65,6 @@ Datasets, documentation, metadata, reports, and figures are licensed under **CC 
 
 ## Citation and archival record
 
-Use `CITATION.cff`. The creator order and artifact title are aligned with the manuscript and planned Zenodo v2.0.0 record. The final companion DOI is intentionally not fabricated here; it should be added after a DOI is reserved in Zenodo.
+Use `CITATION.cff`. The companion archival DOI for version 2.0.0 is **https://doi.org/10.5281/zenodo.22709680**.
 
 Repository: https://github.com/oltoHalmstad/ai-security-monitoring-5g-uas
