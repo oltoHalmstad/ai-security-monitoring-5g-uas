@@ -1,7 +1,7 @@
 """Reproduce the primary robustness analyses used in the Wireless Networks manuscript.
 
-The two aggregate datasets are distributed in the companion Zenodo v2.0.0 artifact,
-not in this lightweight GitHub repository.
+The two aggregate datasets are distributed in the published companion Zenodo v2.1.0
+artifact (DOI: 10.5281/zenodo.22722487), not in this lightweight GitHub repository.
 """
 from pathlib import Path
 import numpy as np
@@ -22,6 +22,8 @@ OUT = ROOT / "analysis_outputs"
 OUT.mkdir(exist_ok=True)
 
 traffic = ["packet_count","byte_count","packets_per_second","throughput_kbps","latency_ms","jitter_ms","packet_loss_rate","retransmission_rate","connection_duration_sec"]
+# Historical artifact label: "traffic+5g". The context bundle below also includes
+# generic source/destination ports and protocol, so it is not a pure 5G-only ablation.
 ctx = ["source_port","destination_port","protocol","network_slice_id","cell_id","signal_quality_dbm","handover_event","handover_count"]
 exclude = {"timestamp","organization_id","fleet_id","drone_id","mission_id","source_ip","destination_ip","session_id","attack_type","attack_stage","severity","recommended_response","anomaly_score","incident_label"}
 classes = ["normal","suspicious","malicious"]
@@ -91,7 +93,7 @@ def transfer(train_name, train, test_name, test):
 
 
 if not SYN.exists() or not COS.exists():
-    raise SystemExit("Companion datasets not found. Download the Zenodo v2.0.0 artifact and place the aggregate CSVs under data/ as documented in docs/REPRODUCIBILITY.md.")
+    raise SystemExit("Companion datasets not found. Download the published Zenodo v2.1.0 artifact (DOI: 10.5281/zenodo.22722487) and place the aggregate CSVs under data/ as documented in docs/REPRODUCIBILITY.md.")
 
 syn = pd.read_csv(SYN)
 cos = pd.read_csv(COS)
