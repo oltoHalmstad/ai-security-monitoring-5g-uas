@@ -8,6 +8,9 @@ import sys
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
+CURRENT_VERSION = "2.1.0"
+CURRENT_DOI = "10.5281/zenodo.22722487"
+PRECURSOR_DOI = "10.5281/zenodo.20825334"
 REQUIRED_FILES = [
     "README.md", "CITATION.cff", ".zenodo.json", "LICENSE", "LICENSE_CODE_MIT", "requirements.txt",
     "analysis/validate_repository.py", "analysis/reproduce_manuscript_analysis.py",
@@ -56,7 +59,7 @@ if schema_path.is_file():
         elif columns[-1] != "incident_label": fail("schema final column must be incident_label")
         if schema.get("categorical_values", {}).get("incident_label") != ["normal", "suspicious", "malicious"]:
             fail("schema incident_label values are incorrect")
-        if schema.get("provenance", {}).get("reference_doi") != "10.5281/zenodo.20825334":
+        if schema.get("provenance", {}).get("reference_doi") != PRECURSOR_DOI:
             fail("schema precursor DOI mismatch")
 
 zenodo = None
@@ -65,7 +68,9 @@ if (ROOT / ".zenodo.json").is_file():
     except Exception as exc: fail(f"invalid .zenodo.json: {exc}")
     else:
         if zenodo.get("license") != "CC-BY-4.0": fail("Zenodo primary license must be CC-BY-4.0")
-        if str(zenodo.get("version")) != "2.0.0": fail("Zenodo version must be 2.0.0")
+        if str(zenodo.get("version")) != CURRENT_VERSION: fail(f"Zenodo version must be {CURRENT_VERSION}")
+        if zenodo.get("publication_date") != "2026-09-12": fail("Zenodo publication_date must be 2026-09-12")
+        if CURRENT_DOI not in str(zenodo.get("description", "")): fail("Zenodo description does not contain current DOI")
         if [c.get("name") for c in zenodo.get("creators", [])] != EXPECTED_AUTHORS: fail("Zenodo creator order mismatch")
 
 citation = None
@@ -75,6 +80,8 @@ if (ROOT / "CITATION.cff").is_file():
     else:
         cff_names = [f"{a.get('family-names')}, {a.get('given-names')}" for a in citation.get("authors", [])]
         if cff_names != EXPECTED_AUTHORS: fail("CITATION.cff author order mismatch")
+        if str(citation.get("version")) != CURRENT_VERSION: fail(f"CITATION.cff version must be {CURRENT_VERSION}")
+        if citation.get("doi") != CURRENT_DOI: fail("CITATION.cff DOI mismatch")
 
 if isinstance(zenodo, dict) and isinstance(citation, dict):
     if zenodo.get("title") != citation.get("title"): fail("artifact title mismatch between .zenodo.json and CITATION.cff")
@@ -115,11 +122,13 @@ if not r or not approx(r.get("macro_f1"), 0.8239): fail("window-level HGB result
 for rel in ("README.md", "docs/REPRODUCIBILITY.md"):
     path = ROOT / rel
     if path.is_file():
-        for script in re.findall(r"\bpython(?:3)?\s+([A-Za-z0-9_./-]+\.py)\b", path.read_text(encoding="utf-8")):
+        text = path.read_text(encoding="utf-8")
+        if CURRENT_DOI not in text: fail(f"{rel} does not contain current Zenodo DOI")
+        for script in re.findall(r"\bpython(?:3)?\s+([A-Za-z0-9_./-]+\.py)\b", text):
             if not (ROOT / script).is_file(): fail(f"{rel} references missing script: {script}")
 
 if errors:
     print("REPOSITORY VALIDATION: FAILED")
     for error in errors: print("-", error)
     sys.exit(1)
-print(f"REPOSITORY VALIDATION: PASSED ({len(REQUIRED_FILES)} required files checked; manuscript result anchors aligned)")
+print(f"REPOSITORY VALIDATION: PASSED ({len(REQUIRED_FILES)} required files checked; manuscript result anchors aligned; Zenodo {CURRENT_VERSION} metadata aligned)")
