@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The artifact is designed to evaluate AI-assisted cyber-incident monitoring in 5G-enabled unmanned aerial system (UAS) wireless networks under a controlled transition from synthetic telemetry to measurement-derived co-simulation telemetry.
+The artifact is designed to evaluate AI-assisted cyber-incident monitoring in 5G-enabled unmanned aerial system (UAS) wireless networks under a controlled transition from synthetic telemetry to co-simulation-derived telemetry.
 
 ## Data resources
 
@@ -22,9 +22,11 @@ Co-simulation labels: 15,247 normal; 912 suspicious; 1,620 malicious.
 ## Intended uses
 
 - run-wise intrusion-detection evaluation;
-- feature-context ablation for traffic, 5G context, and security indicators;
+- feature-context comparison using traffic/QoS, the archived `traffic+5g` combined context bundle, and the full feature set;
 - synthetic-to-co-simulation domain-transfer analysis;
 - reproducibility exercises for wireless-network security research.
+
+The archived label `traffic+5g` denotes a 17-feature combined context bundle containing 9 traffic/QoS fields, 3 generic port/protocol fields, and 5 mobile/5G fields. It is not a pure 5G-only ablation and does not establish an isolated causal benefit of 5G-specific features.
 
 ## Out-of-scope claims
 
