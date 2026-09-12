@@ -2,7 +2,7 @@
 
 ## Publication-facing GitHub repository
 
-This repository keeps the lightweight materials needed to review and validate the manuscript's numerical claims: schema, result tables, metadata, validation code, and the downstream analysis script. The full 17,779-row co-simulation dataset, 10,000-row synthetic reference, 43 per-run CSVs, 43 YAML manifests, exact manuscript figures, source co-simulation pipeline, and representative provenance chain are packaged in the current companion Zenodo **v2.1.0** artifact at https://doi.org/10.5281/zenodo.22722487. The previous published version 2.0.0 remains available at https://doi.org/10.5281/zenodo.22709680.
+This repository keeps the lightweight materials needed to review and validate the manuscript's numerical claims: schema, result tables, metadata, validation code, and the downstream analysis script. The full 17,779-row co-simulation dataset, 10,000-row synthetic reference, 43 per-run CSVs, 43 YAML manifests, exact manuscript figures, source co-simulation pipeline, and representative provenance chain are published in the companion Zenodo **v2.1.0** artifact at https://doi.org/10.5281/zenodo.22722487 (public record: https://zenodo.org/records/22722487). The previous published version 2.0.0 remains available at https://doi.org/10.5281/zenodo.22709680.
 
 ## Environment and repository validation
 
@@ -17,7 +17,7 @@ The validator checks the repository structure, telemetry schema, citation/Zenodo
 
 ## Full numerical reproduction
 
-After downloading the current companion Zenodo v2.1.0 artifact, place the aggregate datasets at:
+After downloading the published companion Zenodo v2.1.0 artifact, place the aggregate datasets at:
 
 ```text
 data/synthetic_reference/drone_network_telemetry_dataset.csv
