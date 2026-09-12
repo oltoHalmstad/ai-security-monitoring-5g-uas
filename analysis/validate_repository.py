@@ -59,8 +59,14 @@ if schema_path.is_file():
         elif columns[-1] != "incident_label": fail("schema final column must be incident_label")
         if schema.get("categorical_values", {}).get("incident_label") != ["normal", "suspicious", "malicious"]:
             fail("schema incident_label values are incorrect")
-        if schema.get("provenance", {}).get("reference_doi") != PRECURSOR_DOI:
+        provenance = schema.get("provenance", {})
+        if provenance.get("reference_doi") != PRECURSOR_DOI:
             fail("schema precursor DOI mismatch")
+        if provenance.get("companion_archive_doi") != CURRENT_DOI:
+            fail("schema companion archive DOI mismatch")
+        for source in provenance.get("sources", []):
+            if "Seput" in source or source.startswith("data_ref/") or source.startswith("source_documents/"):
+                fail(f"schema contains stale provenance path: {source}")
 
 zenodo = None
 if (ROOT / ".zenodo.json").is_file():
@@ -119,13 +125,22 @@ if len(window) != 15: fail("window-level model table must contain 15 rows")
 r = next((x for x in window if x.get("model") == "gradient boosting" and x.get("dataset") == "Co-simulation" and x.get("feature_set") == "full feature set"), None)
 if not r or not approx(r.get("macro_f1"), 0.8239): fail("window-level HGB result mismatch")
 
-for rel in ("README.md", "docs/REPRODUCIBILITY.md"):
+for rel in ("README.md", "docs/REPRODUCIBILITY.md", "analysis/reproduce_manuscript_analysis.py"):
     path = ROOT / rel
     if path.is_file():
         text = path.read_text(encoding="utf-8")
         if CURRENT_DOI not in text: fail(f"{rel} does not contain current Zenodo DOI")
+        if rel == "analysis/reproduce_manuscript_analysis.py" and "Zenodo v2.0.0 artifact" in text:
+            fail("reproduction script contains stale Zenodo v2.0.0 guidance")
         for script in re.findall(r"\bpython(?:3)?\s+([A-Za-z0-9_./-]+\.py)\b", text):
             if not (ROOT / script).is_file(): fail(f"{rel} references missing script: {script}")
+
+readme_text = (ROOT / "README.md").read_text(encoding="utf-8") if (ROOT / "README.md").is_file() else ""
+if "not a pure 5G-only ablation" not in readme_text:
+    fail("README must clarify that traffic+5g is a combined context bundle")
+
+gitignore_text = (ROOT / ".gitignore").read_text(encoding="utf-8") if (ROOT / ".gitignore").is_file() else ""
+if "data/" not in gitignore_text: fail(".gitignore must ignore downloaded data/")
 
 if errors:
     print("REPOSITORY VALIDATION: FAILED")
