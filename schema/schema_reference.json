@@ -3,15 +3,14 @@
   "provenance": {
     "status": "reconstructed_from_primary_sources",
     "reference_doi": "10.5281/zenodo.20825334",
+    "companion_archive_doi": "10.5281/zenodo.22722487",
     "reference_dataset_md5": "bc1ae6f3ae56c28b02cc3c2a7749f779",
     "sources": [
-      "source_documents/1 - UAS_CoSimulation_Seput_Instruction.docx",
-      "source_documents/2 - UAS_CoSimulation_Experiment_Instructions.docx",
-      "data_ref/drone_network_telemetry_dataset.csv",
-      "data_ref/source_package/generate_drone_network_telemetry_dataset.py",
-      "data_ref/source_package/label_map.json"
+      "documentation/source_documents/1 - UAS_CoSimulation_Setup_Instruction.docx",
+      "documentation/source_documents/2 - UAS_CoSimulation_Experiment_Instructions.docx",
+      "data/synthetic_reference/drone_network_telemetry_dataset.csv"
     ],
-    "note": "The documents reference but do not contain or publish the original schema_reference.json."
+    "note": "The original schema_reference.json was not published with the precursor dataset. This schema was reconstructed from the archived source documents and precursor dataset. The original synthetic generator and label_map.json used during reconstruction were local source-package inputs and are not redistributed in this lightweight GitHub repository or in the Zenodo v2.1.0 archive."
   },
   "columns": [
     "timestamp",
