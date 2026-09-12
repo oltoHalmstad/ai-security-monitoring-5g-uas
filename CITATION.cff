@@ -1,10 +1,10 @@
 cff-version: 1.2.0
-message: "If you use this artifact, please cite the Zenodo record and the associated manuscript."
+message: "If you use this artifact, please cite the current Zenodo record and the associated manuscript."
 title: "5G/UAS Wireless-Security Co-Simulation Dataset and Reproducibility Artifact for AI-Assisted Security Monitoring"
 type: dataset
-version: "2.0.0"
-doi: "10.5281/zenodo.22709680"
-date-released: 2026-09-11
+version: "2.1.0"
+doi: "10.5281/zenodo.22722487"
+date-released: 2026-09-12
 authors:
   - family-names: "Torstensson"
     given-names: "Olga"
@@ -30,7 +30,7 @@ authors:
     affiliation: "Halmstad University; Federal University of Rio Grande do Sul"
     orcid: "https://orcid.org/0000-0003-4655-8889"
 repository-code: "https://github.com/oltoHalmstad/ai-security-monitoring-5g-uas"
-abstract: "Companion 5G/UAS wireless-security co-simulation dataset and reproducibility artifact for run-wise validation and cross-domain transfer analysis in AI-assisted security monitoring."
+abstract: "Companion 5G/UAS wireless-security co-simulation dataset and reproducibility artifact for run-wise validation and cross-domain transfer analysis in AI-assisted security monitoring. Version 2.1.0 aligns the archive and manuscript mapping with the final Wireless Networks submission."
 license: "CC-BY-4.0"
 keywords:
   - 5G security
