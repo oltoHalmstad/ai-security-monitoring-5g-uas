@@ -10,10 +10,12 @@ The manuscript evaluates the same ordered 44-column 5G/UAS security-telemetry sc
 
 Publication-facing result anchors in this repository are:
 
-- `results/fair_groupwise_comparison.csv`: matched five-fold mission/run-group validation. All-feature HGB macro-F1 is **0.998 ± 0.001** on the synthetic reference and **0.624 ± 0.057** on co-simulation; traffic+5G HGB reaches **0.626 ± 0.056** on co-simulation.
-- `results/cross_domain_transfer_results.csv`: complete RF/HGB zero-shot transfer. Synthetic→co-simulation RF reaches **0.413** macro-F1 with all features and **0.308** with traffic+5G; the latter predicts all target rows as normal.
+- `results/fair_groupwise_comparison.csv`: matched five-fold mission/run-group validation. All-feature HGB macro-F1 is **0.998 ± 0.001** on the synthetic reference and **0.624 ± 0.057** on co-simulation; the historical artifact label `traffic+5g` reaches **0.626 ± 0.056** on co-simulation.
+- `results/cross_domain_transfer_results.csv`: complete RF/HGB zero-shot transfer. Synthetic→co-simulation RF reaches **0.413** macro-F1 with all features and **0.308** with `traffic+5g`; the latter predicts all target rows as normal.
 - `results/distribution_shift_results.csv`: all-row and normal-only KS diagnostics. Normal packet-count KS D is **0.993** and normal API-request-count D rounds to **1.000**.
-- `results/window_level_model_metrics.csv`: secondary 70/30 window-level comparison. HGB reaches **0.824** macro-F1 with the full co-simulation feature set and **0.820** with traffic+5G.
+- `results/window_level_model_metrics.csv`: secondary 70/30 window-level comparison. HGB reaches **0.824** macro-F1 with the full co-simulation feature set and **0.820** with `traffic+5g`.
+
+**Feature-label note.** The archived result tables and scripts retain `traffic+5g` for backward compatibility. It is a **17-feature combined context bundle**, not a pure 5G-only ablation: 9 traffic/QoS fields; `source_port`, `destination_port`, and `protocol`; plus `network_slice_id`, `cell_id`, `signal_quality_dbm`, `handover_event`, and `handover_count`. Results for this bundle therefore should not be interpreted as establishing an isolated causal benefit of 5G-specific features.
 
 Published companion Zenodo **v2.1.0** DOI: **10.5281/zenodo.22722487**.
 
