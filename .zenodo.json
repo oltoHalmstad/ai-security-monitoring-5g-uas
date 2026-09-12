@@ -1,7 +1,7 @@
 {
   "title": "5G/UAS Wireless-Security Co-Simulation Dataset and Reproducibility Artifact for AI-Assisted Security Monitoring",
   "upload_type": "dataset",
-  "description": "Companion dataset and reproducibility artifact for the manuscript “AI-Assisted Security Monitoring in 5G-Enabled UAS Wireless Networks: Run-Wise Validation and Cross-Domain Transfer”. Includes the 17,779-row/43-run co-simulation aggregate, 43 deterministic per-run files, 43 source YAML manifests, the 10,000-row synthetic reference, schema/validator, source co-simulation pipeline material, original window-level model report, matched run-wise validation, complete RF/HGB zero-shot transfer results, distribution-shift analysis, exact manuscript figures, and representative run provenance. Companion Zenodo DOI: 10.5281/zenodo.22709680.",
+  "description": "Companion dataset and reproducibility artifact for the manuscript “AI-Assisted Security Monitoring in 5G-Enabled UAS Wireless Networks: Run-Wise Validation and Cross-Domain Transfer”. Includes the 17,779-row/43-run co-simulation aggregate, 43 deterministic per-run files, 43 source YAML manifests, the 10,000-row synthetic reference, schema/validator, source co-simulation pipeline material, original window-level model report, matched run-wise validation, complete RF/HGB zero-shot transfer results, distribution-shift analysis, exact manuscript figures, and representative run provenance. Current companion Zenodo DOI: 10.5281/zenodo.22722487. Version 2.1.0 aligns the archive with the final Wireless Networks manuscript; previous published version 2.0.0 is available at DOI 10.5281/zenodo.22709680.",
   "creators": [
     {"name":"Torstensson, Olga","affiliation":"Halmstad University","orcid":"0009-0007-2169-6851"},
     {"name":"Shrestha, Basudeo","affiliation":"Halmstad University"},
@@ -12,8 +12,8 @@
   ],
   "keywords": ["5G security","UAS","wireless intrusion detection","artificial intelligence","machine learning","co-simulation","Simu5G","PX4","ROS 2","network telemetry","domain shift","cross-domain transfer","reproducible research"],
   "license": "CC-BY-4.0",
-  "version": "2.0.0",
-  "publication_date": "2026-09-11",
+  "version": "2.1.0",
+  "publication_date": "2026-09-12",
   "access_right": "open",
   "related_identifiers": [
     {"identifier":"10.5281/zenodo.20825334","relation":"isDerivedFrom","resource_type":"dataset"},
